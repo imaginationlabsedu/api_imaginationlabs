@@ -13,6 +13,12 @@ const sequelize = new Sequelize(DB_FULL_CONNECT, {
 	logging: false,
 	native: false,
 	dialectModule: pg,
+	dialectOptions: {
+		ssl: {
+			require: true,
+			rejectUnauthorized: false,
+		},
+	},
 });
 
 // Pasar la conexión a los modelos para que se asocien a la instancia de Sequelize
