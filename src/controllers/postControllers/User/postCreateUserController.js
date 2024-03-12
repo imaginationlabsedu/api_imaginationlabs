@@ -16,7 +16,10 @@ const postCreateUserController = async (email, phone, name, confirmation) => {
 						user: user,
 						status: 1,
 				  }
-				: { message: "El usuario ya existe porfavor intente con otro email" };
+				: {
+						message: "El usuario ya existe porfavor intente con otro email",
+						status: 0,
+				  };
 
 			return response;
 		} else {
