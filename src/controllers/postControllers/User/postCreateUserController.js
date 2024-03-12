@@ -1,6 +1,6 @@
 const { User } = require("../../../db");
 
-const postCreateUserController = async (email, name, phone, confirmation) => {
+const postCreateUserController = async (email, phone, name, confirmation) => {
 	try {
 		if (confirmation) {
 			const [user, created] = await User.findOrCreate({
@@ -19,6 +19,11 @@ const postCreateUserController = async (email, name, phone, confirmation) => {
 				: { message: "El usuario ya existe porfavor intente con otro email" };
 
 			return response;
+		} else {
+			return {
+				message: "El usuario no ha sido creado correctamente",
+				status: 0,
+			};
 		}
 	} catch (error) {
 		return error;

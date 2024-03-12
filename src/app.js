@@ -25,7 +25,7 @@ server.use((req, res, next) => {
 	next();
 });
 
-server.use("/users", userRoutes);
+server.use("/person", userRoutes);
 
 // Error catching endware.
 server.use((err, req, res, next) => {
