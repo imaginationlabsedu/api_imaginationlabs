@@ -5,7 +5,7 @@ const {
 const postHandlerUser = async (req, res) => {
 	if (req.body) {
 		const { name, email, phone, confirmation } = req.body;
-		if (!name || !email || !phone || !confirmation) {
+		if (!name || !email || !confirmation) {
 			return res.status(400).json({ error: "Lack Of Data" });
 		}
 		try {
